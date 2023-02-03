@@ -26,6 +26,7 @@ img{
 @media (min-width: 768px) { 
   body {
     background-image : url(./assets/training-duo-cordes.jpg); 
+    background-size: cover;
   }
   img{
     width:500px;

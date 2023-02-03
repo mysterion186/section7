@@ -63,6 +63,10 @@ export default {
 
     postQuestion(data:Question, token:string){
         return this.call("post","questions", data, token);
+    },
+
+    postCreateGame(){
+        return this.call("post", "rebuild-db");
     }
 
 }

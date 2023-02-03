@@ -46,7 +46,9 @@ function ScoreTable() {
                 </table>
                 <div className='flex justify-center items-center'>
                     <Link to="/save-name">
-                        <button className="bg-green-500 flex justify-center items-center hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+                        <button className="bg-green-500 flex justify-center items-center hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" onClick={() =>{
+                            QuizApiService.postCreateGame();
+                        }}>
                             Commencer le quiz
                         </button>
                     </Link>

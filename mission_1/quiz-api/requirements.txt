@@ -13,3 +13,4 @@ Werkzeug==2.2.2
 zipp==3.10.0
 pyjwt
 gunicorn==20.1.0
+requests

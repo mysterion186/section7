@@ -25,22 +25,10 @@ def init_db():
     Returns : 
     tuple(str, int) : (status, code)
     """
-    raw_token = request.headers.get('Authorization')
-    if raw_token == None : 
-        return 'Missing authorization headers', 401
-    token = raw_token.replace("Bearer ","")
-    try : 
-        jwt.decode_token(token)
-        try : 
-            create_db.create_question(path = create_db.PATH)
-            create_db.create_participation(path = create_db.PATH)
-            return "Ok", 200
-        except Exception as e :
-            print(e)
-            return "Error", 401
-    except jwt.JwtError as e:
-        print(e)
-        return 'Unauthorized', 401
+    create_db.create_question(path = create_db.PATH)
+    create_db.create_participation(path = create_db.PATH)
+    create_db.create_questions(path = create_db.PATH)
+    return "Ok", 200
 
 @quiz.route('/questions',methods=['POST'])
 def add_questions() : 
